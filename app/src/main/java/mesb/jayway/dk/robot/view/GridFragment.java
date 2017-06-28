@@ -36,9 +36,6 @@ public class GridFragment extends Fragment {
         for(Instruction i : instructions) {
             robot.doMove(i);
         }
-
-        result.setText(robot.getPosition().toString());
-
     }
 
     @Override
@@ -56,7 +53,7 @@ public class GridFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_grid, container, false);
+        View view = new GridView(getActivity(),5,5);
 
         result = view.findViewById(R.id.grid_tw_result);
         return view;
