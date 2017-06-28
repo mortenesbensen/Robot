@@ -5,6 +5,9 @@ import java.util.List;
 
 import mesb.jayway.dk.robot.robot.Instruction;
 
+/**
+ * Takes a string of instructions and parses them
+ */
 public class InstructionParser {
 
 	public static List<Instruction> parseInstructionString(String is) {

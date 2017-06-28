@@ -1,5 +1,7 @@
 package mesb.jayway.dk.robot.robot;
 
+import java.util.List;
+
 /**
  * This is our robot which moves in a grid
  * @author Morten
@@ -9,12 +11,19 @@ public class Robot {
 
 	private RobotPosition position;
 	private Grid grid;
-	
+	private RobotMoveListener mRobotMoveListener;
+
 	public Robot(int startingCol, int startingRow, Direction direction, Grid grid) {
 		position = new RobotPosition(startingCol, startingRow, direction);
 		this.grid = grid;
 	}
-	
+
+	public void processInstructions(List<Instruction> instructions) {
+        for(Instruction i : instructions) {
+            doMove(i);
+        }
+    }
+
 	/**
 	 * Instructs the robot to move
 	 * @param i
@@ -38,6 +47,9 @@ public class Robot {
 		default:
 			break;
 		}
+
+		if(mRobotMoveListener != null)
+		    mRobotMoveListener.onRobotMove(position);
 	}
 	
 	public RobotPosition getPosition() {
@@ -94,5 +106,13 @@ public class Robot {
 			position.setColumn(position.getColumn() - 1);
 			break;
 		}
+	}
+
+	public void addRobotMoveListener(RobotMoveListener listener) {
+        mRobotMoveListener = listener;
+    }
+
+	public interface RobotMoveListener {
+		void onRobotMove(RobotPosition position);
 	}
 }

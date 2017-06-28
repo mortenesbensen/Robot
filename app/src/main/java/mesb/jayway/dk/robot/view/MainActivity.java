@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements SettingsFragment.OnStartBu
     public void onStartButtonClicked(int gridCols, int gridRows, int robotCol, int robotRow, String robotDir, String robotIns) {
         if(mIsDualMode) {
             GridFragment gridFragment = (GridFragment) getFragmentManager().findFragmentById(R.id.fragment_grid);
-            gridFragment.startRobot(gridCols, gridRows, robotCol, robotRow, robotDir, robotIns);
+            gridFragment.start(gridCols, gridRows, robotCol, robotRow, robotDir, robotIns);
         } else {
             GridFragment gridFragment = new GridFragment();
             Bundle b = new Bundle();
@@ -56,13 +56,9 @@ public class MainActivity extends Activity implements SettingsFragment.OnStartBu
 
             FragmentManager manager = getFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();
-
             gridFragment.setArguments(b);
-
             transaction.replace(R.id.fragment_container, gridFragment);
-
             transaction.addToBackStack(null);
-
             transaction.commit();
         }
     }

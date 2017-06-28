@@ -6,57 +6,69 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import java.util.List;
-
-import mesb.jayway.dk.robot.R;
 import mesb.jayway.dk.robot.robot.Direction;
 import mesb.jayway.dk.robot.robot.Grid;
 import mesb.jayway.dk.robot.robot.Instruction;
+import mesb.jayway.dk.robot.robot.RobotPosition;
 import mesb.jayway.dk.robot.robot.util.InstructionParser;
 import mesb.jayway.dk.robot.robot.Robot;
 
 /**
- * Here we visuzalise the robot movement
+ * Here we visualise the robot movement
  */
-public class GridFragment extends Fragment {
+public class GridFragment extends Fragment implements Robot.RobotMoveListener{
 
-    private TextView result;
+    public GridFragment() {}
 
-    public GridFragment() {
-        // Required empty public constructor
-    }
+    public void start(int gridCol, int gridRow, int robotCol, int robotRow, String robotDir, String robotIns) {
+        // First we draw the grid
+        GridView gridView = (GridView) getView();
+        gridView.drawGrid(gridCol, gridRow);
 
-    public void startRobot(int gridCol, int gridRow, int robotCol, int robotRow, String robotDir, String robotIns) {
-
+        // Then we create our robot
         Grid grid = new Grid(gridCol, gridRow);
         Robot robot = new Robot(robotCol, robotRow, Direction.valueOf(robotDir), grid);
+        robot.addRobotMoveListener(this);
+
+        // Then we parse the instructions
         List<Instruction> instructions = InstructionParser.parseInstructionString(robotIns);
-        for(Instruction i : instructions) {
-            robot.doMove(i);
-        }
+
+        // Lastly, we let the robot move
+        robot.processInstructions(instructions);
+
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
         Bundle b = getArguments();
-
         if(b != null) {
-            startRobot(b.getInt(MainActivity.EXTRA_GRID_COLS), b.getInt(MainActivity.EXTRA_GRID_ROWS), b.getInt(MainActivity.EXTRA_ROBOT_COL), b.getInt(MainActivity.EXTRA_ROBOT_ROW), b.getString(MainActivity.EXTRA_ROBOT_DIR), b.getString(MainActivity.EXTRA_ROBOT_INST));
+            start(b.getInt(MainActivity.EXTRA_GRID_COLS), b.getInt(MainActivity.EXTRA_GRID_ROWS), b.getInt(MainActivity.EXTRA_ROBOT_COL), b.getInt(MainActivity.EXTRA_ROBOT_ROW), b.getString(MainActivity.EXTRA_ROBOT_DIR), b.getString(MainActivity.EXTRA_ROBOT_INST));
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = new GridView(getActivity(),5,5);
+         // Create the grid.
+        GridView view = new GridView(getActivity());
 
-        result = view.findViewById(R.id.grid_tw_result);
+        // If this fragments was started with extras retrieve them
+        Bundle b = getArguments();
+        if (b != null) {
+            int cols = b.getInt(MainActivity.EXTRA_GRID_COLS);
+            int rows = b.getInt(MainActivity.EXTRA_GRID_ROWS);
+            view.drawGrid(cols, rows);
+        }
+
         return view;
     }
 
+    @Override
+    public void onRobotMove(RobotPosition position) {
+        GridView view = (GridView) getView();
+        view.drawRobot(position);
+    }
 }

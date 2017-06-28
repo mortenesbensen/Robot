@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Jayway Robot</string>
+    <string name="app_name">jayway Robot</string>
     <string name="settings_gridsize">Grid Size</string>
     <string name="settings_robotpos">Robot Position</string>
     <string name="settings_instructions">Robot Instructions</string>

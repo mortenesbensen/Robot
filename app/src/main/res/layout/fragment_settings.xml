@@ -26,7 +26,8 @@
             android:layout_weight="1"
             android:id="@+id/settings_et_grid_columns"
             android:hint="@string/settings_grid_col_tooltip"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:nextFocusDown="@+id/settings_et_grid_rows"/>
 
 
         <EditText
@@ -35,7 +36,8 @@
             android:layout_weight="1"
             android:id="@+id/settings_et_grid_rows"
             android:hint="@string/settings_grid_row_tooltip"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:nextFocusDown="@+id/settings_et_robot_colum"/>
 
     </LinearLayout>
 
@@ -58,7 +60,8 @@
             android:layout_weight="1"
             android:id="@+id/settings_et_robot_colum"
             android:hint="@string/settings_robot_col_tooltip"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:nextFocusDown="@+id/settings_et_robot_row"/>
 
 
         <EditText
@@ -67,7 +70,8 @@
             android:layout_weight="1"
             android:id="@+id/settings_et_robot_row"
             android:hint="@string/settings_grid_row_tooltip"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:nextFocusDown="@+id/settings_et_robot_dir"/>
 
 
         <EditText
@@ -76,7 +80,8 @@
             android:layout_weight="1"
             android:id="@+id/settings_et_robot_dir"
             android:hint="@string/settings_robot_dir_tooltip"
-            android:inputType="textCapCharacters"/>
+            android:inputType="textCapCharacters"
+            />
 
     </LinearLayout>
 
