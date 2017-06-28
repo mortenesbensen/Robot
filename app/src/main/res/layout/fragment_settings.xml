@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mesb.jayway.dk.robot.view.SettingsFragment"
+    android:padding="10dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_tv_gridsize"
+        android:text="@string/settings_gridsize"
+        android:textSize="30dp"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/settings_et_grid_columns"
+            android:hint="@string/settings_grid_col_tooltip"/>
+
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/settings_et_grid_rows"
+            android:hint="@string/settings_grid_row_tooltip"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_tv_robotpos"
+        android:text="@string/settings_robotpos"
+        android:textSize="30dp"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/settings_et_robot_colum"
+            android:hint="@string/settings_robot_col_tooltip"/>
+
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/settings_et_robot_row"
+            android:hint="@string/settings_grid_row_tooltip"/>
+
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/settings_et_robot_dir"
+            android:hint="@string/settings_robot_dir_tooltip"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_tv_instructions"
+        android:text="@string/settings_instructions"
+        android:textSize="30dp"
+        android:textAlignment="center"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_et_robot_instructions"
+        android:hint="@string/settings_robot_inst_tooltip"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/setting_btn_start"
+        android:text="@string/settings_startbtn"
+        android:textSize="30dp"/>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Jayway Robot</string>
+    <string name="settings_gridsize">Grid Size</string>
+    <string name="settings_robotpos">Robot Position</string>
+    <string name="settings_instructions">Robot Instructions</string>
+    <string name="settings_startbtn">Start!</string>
+    <string name="settings_grid_col_tooltip">Columns</string>
+    <string name="settings_grid_row_tooltip">Rows</string>
+    <string name="settings_robot_col_tooltip">Column</string>
+    <string name="settings_robot_row_tooltip">Row</string>
+    <string name="settings_robot_dir_tooltip">Direction</string>
+    <string name="settings_robot_inst_tooltip">Instructions</string>
+</resources>
