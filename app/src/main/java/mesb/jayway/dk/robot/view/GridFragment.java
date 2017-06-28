@@ -52,18 +52,7 @@ public class GridFragment extends Fragment implements Robot.RobotMoveListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-         // Create the grid.
-        GridView view = new GridView(getActivity());
-
-        // If this fragments was started with extras retrieve them
-        Bundle b = getArguments();
-        if (b != null) {
-            int cols = b.getInt(MainActivity.EXTRA_GRID_COLS);
-            int rows = b.getInt(MainActivity.EXTRA_GRID_ROWS);
-            view.drawGrid(cols, rows);
-        }
-
-        return view;
+        return new GridView(getActivity());
     }
 
     @Override
