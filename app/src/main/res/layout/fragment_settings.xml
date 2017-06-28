@@ -5,7 +5,6 @@
     android:orientation="vertical"
     tools:context="mesb.jayway.dk.robot.view.SettingsFragment"
     android:padding="10dp"
-    android:gravity="center_vertical"
     android:background="@drawable/background">
 
     <TextView
@@ -26,7 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/settings_et_grid_columns"
-            android:hint="@string/settings_grid_col_tooltip"/>
+            android:hint="@string/settings_grid_col_tooltip"
+            android:inputType="number"/>
 
 
         <EditText
@@ -34,7 +34,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/settings_et_grid_rows"
-            android:hint="@string/settings_grid_row_tooltip"/>
+            android:hint="@string/settings_grid_row_tooltip"
+            android:inputType="number"/>
 
     </LinearLayout>
 
@@ -56,7 +57,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/settings_et_robot_colum"
-            android:hint="@string/settings_robot_col_tooltip"/>
+            android:hint="@string/settings_robot_col_tooltip"
+            android:inputType="number"/>
 
 
         <EditText
@@ -64,7 +66,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/settings_et_robot_row"
-            android:hint="@string/settings_grid_row_tooltip"/>
+            android:hint="@string/settings_grid_row_tooltip"
+            android:inputType="number"/>
 
 
         <EditText
@@ -72,7 +75,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/settings_et_robot_dir"
-            android:hint="@string/settings_robot_dir_tooltip"/>
+            android:hint="@string/settings_robot_dir_tooltip"
+            android:inputType="textCapCharacters"/>
 
     </LinearLayout>
 
@@ -90,7 +94,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/settings_et_robot_instructions"
-        android:hint="@string/settings_robot_inst_tooltip"/>
+        android:hint="@string/settings_robot_inst_tooltip"
+        android:inputType="textCapCharacters"/>
 
 
     <Button

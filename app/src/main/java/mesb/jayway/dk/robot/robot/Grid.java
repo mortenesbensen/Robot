@@ -28,13 +28,13 @@ public class Grid {
 			return true;
 
 		switch (pos.getDirection()) {
-		case NORTH:
+		case N:
 			return pos.getRow() - 1 > 0;
-		case SOUTH:
+		case S:
 			return pos.getRow() + 1 < rows;
-		case EAST:
+		case E:
 			return pos.getColumn() + 1 < columns;
-		case WEST:
+		case W:
 			return pos.getColumn() - 1 > 0;
 		default:
 			return false;

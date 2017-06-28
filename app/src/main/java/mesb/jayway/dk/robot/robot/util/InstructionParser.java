@@ -1,7 +1,9 @@
-package mesb.jayway.dk.robot.robot;
+package mesb.jayway.dk.robot.robot.util;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import mesb.jayway.dk.robot.robot.Instruction;
 
 public class InstructionParser {
 

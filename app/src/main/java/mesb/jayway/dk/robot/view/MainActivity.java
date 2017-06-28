@@ -9,6 +9,13 @@ import mesb.jayway.dk.robot.R;
 
 public class MainActivity extends Activity implements SettingsFragment.OnStartButtonClicked {
 
+    public static final String EXTRA_GRID_COLS = "grid_cols";
+    public static final String EXTRA_GRID_ROWS = "grid_rows";
+    public static final String EXTRA_ROBOT_COL = "robot_col";
+    public static final String EXTRA_ROBOT_ROW = "robot_row";
+    public static final String EXTRA_ROBOT_DIR = "robot_dir";
+    public static final String EXTRA_ROBOT_INST = "robot_inst";
+
     private boolean mIsDualMode;
 
     @Override
@@ -33,7 +40,30 @@ public class MainActivity extends Activity implements SettingsFragment.OnStartBu
     }
 
     @Override
-    public void onStartButtonClicked(int gridRows, int gridCols, int robotRow, int robotCol, String robotDir, String robotIns) {
+    public void onStartButtonClicked(int gridCols, int gridRows, int robotCol, int robotRow, String robotDir, String robotIns) {
+        if(mIsDualMode) {
+            GridFragment gridFragment = (GridFragment) getFragmentManager().findFragmentById(R.id.fragment_grid);
+            gridFragment.startRobot(gridCols, gridRows, robotCol, robotRow, robotDir, robotIns);
+        } else {
+            GridFragment gridFragment = new GridFragment();
+            Bundle b = new Bundle();
+            b.putInt(EXTRA_GRID_COLS, gridCols);
+            b.putInt(EXTRA_GRID_ROWS, gridRows);
+            b.putInt(EXTRA_ROBOT_COL, robotCol);
+            b.putInt(EXTRA_ROBOT_ROW, robotRow);
+            b.putString(EXTRA_ROBOT_DIR, robotDir);
+            b.putString(EXTRA_ROBOT_INST, robotIns);
 
+            FragmentManager manager = getFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+
+            gridFragment.setArguments(b);
+
+            transaction.replace(R.id.fragment_container, gridFragment);
+
+            transaction.addToBackStack(null);
+
+            transaction.commit();
+        }
     }
 }

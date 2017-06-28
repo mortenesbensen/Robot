@@ -47,50 +47,50 @@ public class Robot {
 	
 	private void turnLeft() {
 		switch(position.getDirection()) {
-		case NORTH:
-			position.setDirection(Direction.WEST);
+		case N:
+			position.setDirection(Direction.W);
 			break;
-		case SOUTH:
-			position.setDirection(Direction.EAST);
+		case S:
+			position.setDirection(Direction.E);
 			break;
-		case EAST:
-			position.setDirection(Direction.NORTH);
+		case E:
+			position.setDirection(Direction.N);
 			break;
-		case WEST:
-			position.setDirection(Direction.SOUTH);
+		case W:
+			position.setDirection(Direction.S);
 			break;
 		}
 	}
 	
 	private void turnRight() {
 		switch(position.getDirection()) {
-		case NORTH:
-			position.setDirection(Direction.EAST);
+		case N:
+			position.setDirection(Direction.E);
 			break;
-		case SOUTH:
-			position.setDirection(Direction.WEST);
+		case S:
+			position.setDirection(Direction.W);
 			break;
-		case EAST:
-			position.setDirection(Direction.SOUTH);
+		case E:
+			position.setDirection(Direction.S);
 			break;
-		case WEST:
-			position.setDirection(Direction.NORTH);
+		case W:
+			position.setDirection(Direction.N);
 			break;
 		}
 	}
 	
 	private void moveForward() {
 		switch(position.getDirection()) {
-		case NORTH:
+		case N:
 			position.setRow(position.getRow() - 1);
 			break;
-		case SOUTH:
+		case S:
 			position.setRow(position.getRow() + 1);
 			break;
-		case EAST:
+		case E:
 			position.setColumn(position.getColumn() + 1);
 			break;
-		case WEST:
+		case W:
 			position.setColumn(position.getColumn() - 1);
 			break;
 		}

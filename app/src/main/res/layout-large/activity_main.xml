@@ -7,15 +7,18 @@
     tools:context="mesb.jayway.dk.robot.view.MainActivity">
 
     <fragment
+        android:name="mesb.jayway.dk.robot.view.SettingsFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/fragment_settings_container"/>
+        android:id="@+id/fragment_settings"
+        />
 
     <fragment
+        android:name="mesb.jayway.dk.robot.view.GridFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:id="@+id/fragment_grid_container"/>
+        android:id="@+id/fragment_grid"/>
 
 </LinearLayout>

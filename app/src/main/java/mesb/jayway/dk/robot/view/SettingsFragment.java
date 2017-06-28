@@ -64,6 +64,6 @@ public class SettingsFragment extends Fragment {
     }
 
         public interface OnStartButtonClicked {
-            void onStartButtonClicked(int gridRows, int gridCols, int robotRow, int robotCol, String robotDir, String robotIns);
+            void onStartButtonClicked(int gridCols, int gridRows, int robotCol, int robotRow, String robotDir, String robotIns);
         }
 }
