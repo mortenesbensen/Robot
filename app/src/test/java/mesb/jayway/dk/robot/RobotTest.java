@@ -20,6 +20,8 @@ import static org.junit.Assert.assertThat;
 
 public class RobotTest {
 
+    Grid grid = new Grid(5, 5);
+
     @Test
     public void parseInput() {
         String input = "LRF";
@@ -28,22 +30,39 @@ public class RobotTest {
     }
 
     @Test
-    public void processIntructions() {
-        Grid grid = new Grid(5, 5);
-        Robot r = new Robot(1, 2, Direction.N, grid);
-        List<Instruction> ins = Arrays.asList(Instruction.R, Instruction.F, Instruction.F);
+    public void singleStep() {
+        Robot r = new Robot(0, 0, Direction.E, grid);
+        List<Instruction> ins = InstructionParser.parseInstructionString("F");
         r.processInstructions(ins);
-        String finalPosition = "3 2 E";
+        String finalPosition = "1 0 E";
         assertThat(r.getPosition().toString(), is(finalPosition));
     }
 
     @Test
-    public void moveRobot() {
-        Grid grid = new Grid(2, 2);
+    public void moveToFar() {
         Robot r = new Robot(0, 0, Direction.E, grid);
-        Instruction i = Instruction.F;
-        r.doMove(i);
-        String position = "1 0 E";
-        assertThat(r.getPosition().toString(), is(position));
+        List<Instruction> ins = InstructionParser.parseInstructionString("FFFFFFF");
+        r.processInstructions(ins);
+        String finalPosition = "4 0 E";
+        assertThat(r.getPosition().toString(), is(finalPosition));
+    }
+
+    @Test
+    public void moveDiagonal() {
+        Robot r = new Robot(0, 0, Direction.N, grid);
+        List<Instruction> ins = InstructionParser.parseInstructionString("RRFLFRFLFRFLFRFLF");
+        r.processInstructions(ins);
+        String finalPosition = "4 4 E";
+        assertThat(r.getPosition().toString(), is(finalPosition));
+    }
+
+   @Test
+    public void moveAllAround() {
+        Robot r = new Robot(0, 0, Direction.N, grid);
+        List<Instruction> ins = InstructionParser.parseInstructionString("RFFFFRFFFFRFFFFRFFFF");
+        r.processInstructions(ins);
+        String finalPosition = "0 0 N";
+        assertThat(r.getPosition().toString(), is(finalPosition));
+
     }
 }

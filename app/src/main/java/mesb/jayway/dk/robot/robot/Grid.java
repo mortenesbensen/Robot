@@ -7,6 +7,7 @@ package mesb.jayway.dk.robot.robot;
  */
 public class Grid {
 
+
     private int columns;
     private int rows;
 

@@ -58,8 +58,6 @@ public class GridView extends View {
 
         mRobotTile = mGrid[position.getColumn()][position.getRow()];
         Bitmap robotImage = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-
-
         mRobotTile.setRobot(position.getDirection(), robotImage);
         this.invalidate();
     }
@@ -68,11 +66,8 @@ public class GridView extends View {
     protected void onDraw(Canvas canvas) {
 
         if (mCols != 0 && mRows != 0) {
-            // Draw all tiles
             int tileWidth = getWidth() / mCols;
             int tileHeight = getHeight() / mRows;
-
-            // Fill with tiles
             for (int i = 0; i < mCols; i++) {
                 for (int j = 0; j < mRows; j++) {
                     int xPos = i * tileWidth;
