@@ -1,4 +1,4 @@
-package mesb.jayway.dk.robot.view;
+package mesb.jayway.dk.robot.view.grid;
 
 import android.content.Context;
 import android.graphics.Bitmap;

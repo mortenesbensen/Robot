@@ -6,6 +6,8 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 import mesb.jayway.dk.robot.R;
+import mesb.jayway.dk.robot.view.grid.GridFragment;
+import mesb.jayway.dk.robot.view.settings.SettingsFragment;
 
 public class MainActivity extends Activity implements SettingsFragment.OnStartButtonClicked {
 
@@ -41,6 +43,7 @@ public class MainActivity extends Activity implements SettingsFragment.OnStartBu
 
     @Override
     public void onStartButtonClicked(int gridCols, int gridRows, int robotCol, int robotRow, String robotDir, String robotIns) {
+        // If we are in dualmode, the grid fragment is already available, if not, we have to switch fragments
         if(mIsDualMode) {
             GridFragment gridFragment = (GridFragment) getFragmentManager().findFragmentById(R.id.fragment_grid);
             gridFragment.start(gridCols, gridRows, robotCol, robotRow, robotDir, robotIns);

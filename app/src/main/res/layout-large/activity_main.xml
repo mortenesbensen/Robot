@@ -7,7 +7,7 @@
     tools:context="mesb.jayway.dk.robot.view.MainActivity">
 
     <fragment
-        android:name="mesb.jayway.dk.robot.view.SettingsFragment"
+        android:name="mesb.jayway.dk.robot.view.settings.SettingsFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -15,7 +15,7 @@
         />
 
     <fragment
-        android:name="mesb.jayway.dk.robot.view.GridFragment"
+        android:name="mesb.jayway.dk.robot.view.grid.GridFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"

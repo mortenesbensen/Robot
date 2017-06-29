@@ -1,4 +1,4 @@
-package mesb.jayway.dk.robot.view;
+package mesb.jayway.dk.robot.view.grid;
 
 
 import android.os.Bundle;
@@ -13,11 +13,13 @@ import mesb.jayway.dk.robot.robot.Instruction;
 import mesb.jayway.dk.robot.robot.RobotPosition;
 import mesb.jayway.dk.robot.robot.util.InstructionParser;
 import mesb.jayway.dk.robot.robot.Robot;
+import mesb.jayway.dk.robot.view.MainActivity;
 
 /**
- * Here we visualise the robot movement
+ * Here we visuzalise the robot movement
  */
 public class GridFragment extends Fragment implements Robot.RobotMoveListener{
+
 
     public GridFragment() {}
 
@@ -26,9 +28,10 @@ public class GridFragment extends Fragment implements Robot.RobotMoveListener{
         GridView gridView = (GridView) getView();
         gridView.drawGrid(gridCol, gridRow);
 
-        // Then we create our robot
+        // Then we create our robot and draw it
         Grid grid = new Grid(gridCol, gridRow);
         Robot robot = new Robot(robotCol, robotRow, Direction.valueOf(robotDir), grid);
+        gridView.drawRobot(robot.getPosition());
         robot.addRobotMoveListener(this);
 
         // Then we parse the instructions
@@ -52,6 +55,7 @@ public class GridFragment extends Fragment implements Robot.RobotMoveListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+         // Create the grid.
         return new GridView(getActivity());
     }
 

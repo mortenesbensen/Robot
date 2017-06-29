@@ -1,4 +1,4 @@
-package mesb.jayway.dk.robot.view;
+package mesb.jayway.dk.robot.view.settings;
 
 
 import android.content.Context;
