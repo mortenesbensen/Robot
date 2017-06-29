@@ -28,12 +28,22 @@ public class RobotTest {
     }
 
     @Test
-    public void moveRobot() {
+    public void processIntructions() {
         Grid grid = new Grid(5, 5);
         Robot r = new Robot(1, 2, Direction.N, grid);
         List<Instruction> ins = Arrays.asList(Instruction.R, Instruction.F, Instruction.F);
         r.processInstructions(ins);
         String finalPosition = "3 2 E";
         assertThat(r.getPosition().toString(), is(finalPosition));
+    }
+
+    @Test
+    public void moveRobot() {
+        Grid grid = new Grid(2, 2);
+        Robot r = new Robot(0, 0, Direction.E, grid);
+        Instruction i = Instruction.F;
+        r.doMove(i);
+        String position = "1 0 E";
+        assertThat(r.getPosition().toString(), is(position));
     }
 }
