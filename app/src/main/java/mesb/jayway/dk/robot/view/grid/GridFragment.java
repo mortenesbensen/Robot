@@ -6,7 +6,9 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import java.util.List;
+
 import mesb.jayway.dk.robot.robot.Direction;
 import mesb.jayway.dk.robot.robot.Grid;
 import mesb.jayway.dk.robot.robot.Instruction;
@@ -16,15 +18,17 @@ import mesb.jayway.dk.robot.robot.Robot;
 import mesb.jayway.dk.robot.view.MainActivity;
 
 /**
- * Here we visuzalise the robot movement
+ * Here we visualise the robot movement
  */
-public class GridFragment extends Fragment implements Robot.RobotMoveListener{
+public class GridFragment extends Fragment implements Robot.RobotMoveListener {
 
 
-    public GridFragment() {}
+    public GridFragment() {
+    }
 
     public void start(int gridCol, int gridRow, int robotCol, int robotRow, String robotDir, String robotIns) {
-        // First we draw the grid
+
+        // First we draw the gridview
         GridView gridView = (GridView) getView();
         gridView.drawGrid(gridCol, gridRow);
 
@@ -47,7 +51,7 @@ public class GridFragment extends Fragment implements Robot.RobotMoveListener{
     public void onResume() {
         super.onResume();
         Bundle b = getArguments();
-        if(b != null) {
+        if (b != null) {
             start(b.getInt(MainActivity.EXTRA_GRID_COLS), b.getInt(MainActivity.EXTRA_GRID_ROWS), b.getInt(MainActivity.EXTRA_ROBOT_COL), b.getInt(MainActivity.EXTRA_ROBOT_ROW), b.getString(MainActivity.EXTRA_ROBOT_DIR), b.getString(MainActivity.EXTRA_ROBOT_INST));
         }
     }
@@ -55,7 +59,7 @@ public class GridFragment extends Fragment implements Robot.RobotMoveListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-         // Create the grid.
+        // Create the grid.
         return new GridView(getActivity());
     }
 

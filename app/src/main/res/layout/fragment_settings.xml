@@ -2,111 +2,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context="mesb.jayway.dk.robot.view.settings.SettingsFragment"
     android:padding="10dp"
-    android:background="@drawable/background">
+    tools:context="mesb.jayway.dk.robot.view.settings.SettingsFragment">
 
     <TextView
+        android:id="@+id/settings_tv_gridsize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/settings_tv_gridsize"
         android:text="@string/settings_gridsize"
-        android:textSize="30dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
 
         <EditText
+            android:id="@+id/settings_et_grid_columns"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/settings_et_grid_columns"
             android:hint="@string/settings_grid_col_tooltip"
             android:inputType="number"
-            android:nextFocusDown="@+id/settings_et_grid_rows"/>
+            android:nextFocusDown="@+id/settings_et_grid_rows" />
 
 
         <EditText
+            android:id="@+id/settings_et_grid_rows"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/settings_et_grid_rows"
             android:hint="@string/settings_grid_row_tooltip"
             android:inputType="number"
-            android:nextFocusDown="@+id/settings_et_robot_colum"/>
+            android:nextFocusDown="@+id/settings_et_robot_colum" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/settings_tv_robotpos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/settings_tv_robotpos"
         android:text="@string/settings_robotpos"
-        android:textSize="30dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
 
         <EditText
+            android:id="@+id/settings_et_robot_colum"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/settings_et_robot_colum"
             android:hint="@string/settings_robot_col_tooltip"
             android:inputType="number"
-            android:nextFocusDown="@+id/settings_et_robot_row"/>
+            android:nextFocusDown="@+id/settings_et_robot_row" />
 
 
         <EditText
+            android:id="@+id/settings_et_robot_row"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/settings_et_robot_row"
             android:hint="@string/settings_grid_row_tooltip"
             android:inputType="number"
-            android:nextFocusDown="@+id/settings_et_robot_dir"/>
+            android:nextFocusDown="@+id/settings_et_robot_dir" />
 
 
         <EditText
+            android:id="@+id/settings_et_robot_dir"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/settings_et_robot_dir"
             android:hint="@string/settings_robot_dir_tooltip"
-            android:inputType="textCapCharacters"
-            />
+            android:inputType="textCapCharacters" />
 
     </LinearLayout>
 
 
     <TextView
+        android:id="@+id/settings_tv_instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/settings_tv_instructions"
         android:text="@string/settings_instructions"
-        android:textSize="30dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
 
     <EditText
+        android:id="@+id/settings_et_robot_instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/settings_et_robot_instructions"
         android:hint="@string/settings_robot_inst_tooltip"
-        android:inputType="textCapCharacters"/>
+        android:inputType="textCapCharacters" />
 
 
     <Button
+        android:id="@+id/setting_btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/setting_btn_start"
         android:text="@string/settings_startbtn"
-        android:textSize="30dp"/>
+        android:textSize="30dp" />
 </LinearLayout>

@@ -10,12 +10,12 @@ import mesb.jayway.dk.robot.robot.Instruction;
  */
 public class InstructionParser {
 
-	public static List<Instruction> parseInstructionString(String is) {
-		ArrayList<Instruction> instructions = new ArrayList<Instruction>();
+    public static List<Instruction> parseInstructionString(String is) {
+        ArrayList<Instruction> instructions = new ArrayList<Instruction>();
 
-		for (char c : is.toCharArray()) {
-			instructions.add(Instruction.valueOf(Character.toString(c)));
-		}
-		return instructions;
-	}
+        for (char c : is.toCharArray()) {
+            instructions.add(Instruction.valueOf(Character.toString(c)));
+        }
+        return instructions;
+    }
 }

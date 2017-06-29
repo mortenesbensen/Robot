@@ -28,9 +28,9 @@ public class MainActivity extends Activity implements SettingsFragment.OnStartBu
         // Check if we have access to dual mode (2 fragments)
         mIsDualMode = findViewById(R.id.fragment_container) == null;
 
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             // If we are not in the dual mode we add the fragment to our container
-            if(!mIsDualMode) {
+            if (!mIsDualMode) {
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
 
@@ -43,8 +43,8 @@ public class MainActivity extends Activity implements SettingsFragment.OnStartBu
 
     @Override
     public void onStartButtonClicked(int gridCols, int gridRows, int robotCol, int robotRow, String robotDir, String robotIns) {
-        // If we are in dualmode, the grid fragment is already available, if not, we have to switch fragments
-        if(mIsDualMode) {
+        // If we are in dual mode, the grid fragment is already available, if not, we have to switch fragments
+        if (mIsDualMode) {
             GridFragment gridFragment = (GridFragment) getFragmentManager().findFragmentById(R.id.fragment_grid);
             gridFragment.start(gridCols, gridRows, robotCol, robotRow, robotDir, robotIns);
         } else {

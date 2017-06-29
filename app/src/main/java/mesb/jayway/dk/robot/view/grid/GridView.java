@@ -33,13 +33,13 @@ public class GridView extends View {
         int bgColor = getResources().getColor(R.color.robot_blue, null);
         int borderColor = getResources().getColor(R.color.robot_blue_light, null);
 
-        // Initalize a new grid to draw on
+        // Initialize a new grid to draw on
         mGrid = new Tile[cols][rows];
 
         // Fill with tiles
-        for(int i = 0; i < mCols; i++) {
-            for(int j = 0; j < mRows; j++) {
-                mGrid[i][j] = new Tile(i,j,bgColor,borderColor);
+        for (int i = 0; i < mCols; i++) {
+            for (int j = 0; j < mRows; j++) {
+                mGrid[i][j] = new Tile(i, j, bgColor, borderColor);
             }
         }
 
@@ -48,10 +48,11 @@ public class GridView extends View {
 
     /**
      * Places a robot on a tile and redraws the scene
+     *
      * @param position
      */
     public void drawRobot(RobotPosition position) {
-        if(mRobotTile != null)
+        if (mRobotTile != null)
             mRobotTile.removeRobot();
 
         mRobotTile = mGrid[position.getColumn()][position.getRow()];
@@ -65,13 +66,13 @@ public class GridView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 
-        if(mCols != 0 && mRows != 0) {
+        if (mCols != 0 && mRows != 0) {
             // Draw all tiles
             int tileWidth = getWidth() / mCols;
             int tileHeight = getHeight() / mRows;
 
             // Fill with tiles
-            for(int i = 0; i < mCols; i++) {
+            for (int i = 0; i < mCols; i++) {
                 for (int j = 0; j < mRows; j++) {
                     int xPos = i * tileWidth;
                     int yPos = j * tileHeight;

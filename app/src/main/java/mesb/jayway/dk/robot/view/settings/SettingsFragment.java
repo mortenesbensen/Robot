@@ -20,15 +20,14 @@ public class SettingsFragment extends Fragment {
     private OnStartButtonClicked mButtonClickListener;
 
     public SettingsFragment() {
-        // Required empty public constructor
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if(context instanceof OnStartButtonClicked) {
+        if (context instanceof OnStartButtonClicked) {
             mButtonClickListener = (OnStartButtonClicked) context;
-        }   else {
+        } else {
             throw new ClassCastException(context.toString() + " doesn't implement OnStartButtonClicked");
         }
     }
@@ -63,7 +62,7 @@ public class SettingsFragment extends Fragment {
         return view;
     }
 
-        public interface OnStartButtonClicked {
-            void onStartButtonClicked(int gridCols, int gridRows, int robotCol, int robotRow, String robotDir, String robotIns);
-        }
+    public interface OnStartButtonClicked {
+        void onStartButtonClicked(int gridCols, int gridRows, int robotCol, int robotRow, String robotDir, String robotIns);
+    }
 }

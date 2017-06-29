@@ -6,12 +6,12 @@ import android.graphics.Matrix;
 import mesb.jayway.dk.robot.robot.Direction;
 
 /**
- * Rotates a bitmap based on
- *
+ * Rotates a bitmap based on a direction
+ * <p>
  * Created by Morten on 28/06/2017.
  */
 
-public class BitmapRotater {
+public class BitmapRotator {
 
     public static Bitmap rotate(Bitmap source, Direction direction) {
         int degrees = 1;
