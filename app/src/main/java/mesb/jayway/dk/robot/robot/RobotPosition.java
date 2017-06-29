@@ -2,8 +2,6 @@ package mesb.jayway.dk.robot.robot;
 
 /**
  * Class representing our Robot's position
- *
- * @author Morten
  */
 public class RobotPosition {
 

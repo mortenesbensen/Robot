@@ -18,7 +18,7 @@ import mesb.jayway.dk.robot.robot.Robot;
 import mesb.jayway.dk.robot.view.MainActivity;
 
 /**
- * Here we visualise the robot movement
+ * Here we visualise the robot movement on a grid
  */
 public class GridFragment extends Fragment implements Robot.RobotMoveListener {
 

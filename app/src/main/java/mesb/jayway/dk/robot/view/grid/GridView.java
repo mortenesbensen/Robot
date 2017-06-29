@@ -26,6 +26,9 @@ public class GridView extends View {
 
     }
 
+    /**
+     * Draw a grid of size col * row
+     */
     public void drawGrid(int cols, int rows) {
         mCols = cols;
         mRows = rows;
@@ -48,8 +51,6 @@ public class GridView extends View {
 
     /**
      * Places a robot on a tile and redraws the scene
-     *
-     * @param position
      */
     public void drawRobot(RobotPosition position) {
         if (mRobotTile != null)

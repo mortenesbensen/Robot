@@ -9,6 +9,8 @@ import mesb.jayway.dk.robot.robot.Direction;
 import mesb.jayway.dk.robot.util.BitmapRotator;
 
 /**
+ * Represents one tile in the GridView
+ *
  * Created by Morten on 28/06/2017.
  */
 
@@ -32,6 +34,9 @@ public class Tile {
         this.mBorderPaint.setColor(borderColor);
     }
 
+    /**
+     * Draws the tile on the canvas
+     */
     public void draw(Canvas canvas) {
         canvas.drawRect(mRect, mBgPaint);
         canvas.drawRect(mRect, mBorderPaint);
@@ -41,13 +46,20 @@ public class Tile {
         }
     }
 
+    /**
+     * Set a robot on this tile
+     */
     public void setRobot(Direction direction, Bitmap robot) {
         mRobot = BitmapRotator.rotate(robot, direction);
     }
 
+    /**
+     * Remove the robot again
+     */
     public void removeRobot() {
         mRobot = null;
     }
+
 
     public void setRect(Rect rect) {
         this.mRect = rect;
